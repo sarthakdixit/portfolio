@@ -87,7 +87,3 @@ Faster builds, automatic preview deployments, no `base` path gymnastics.
 ## Project structure
 
 See `AGENT.md` for the full layout and coding conventions.
-
-## License
-
-MIT
