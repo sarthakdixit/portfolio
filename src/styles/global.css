@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: theme('fontFamily.sans');
+    letter-spacing: -0.011em;
+    /* Wallpaper gradient — subtle warm-to-cool blend like a real macOS wallpaper. */
+    background: linear-gradient(
+      135deg,
+      #fde2c7 0%,
+      #fcc6e0 30%,
+      #c4b5fd 65%,
+      #a5d8ff 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  html.dark body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4c1d95 65%, #1e3a8a 100%);
+  }
+
+  /* Soft glow blobs that show through frosted panels — fixed so they don't scroll */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: rgba(251, 191, 36, 0.5);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.45);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  html.dark body::before {
+    background: rgba(168, 85, 247, 0.35);
+  }
+  html.dark body::after {
+    background: rgba(59, 130, 246, 0.3);
+  }
+
+  ::selection {
+    @apply bg-blue-500/30 text-zinc-900 dark:text-zinc-100;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* The signature macOS frosted panel.
+     Used by every Window component to wrap a section. */
+  .mac-panel {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+
+  html.dark .mac-panel {
+    background: rgba(24, 24, 27, 0.55);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Lighter variant used for nested cards (project cards, social buttons, etc.)
+     so they don't compound the blur cost. */
+  .mac-card {
+    background: rgba(255, 255, 255, 0.55);
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+  }
+
+  html.dark .mac-card {
+    background: rgba(39, 39, 42, 0.55);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Mobile guard — heavy blur is expensive on phones. */
+  @media (max-width: 640px) {
+    .mac-panel {
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+    }
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-zinc-400/40 dark:bg-zinc-600/40 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-500/60 dark:bg-zinc-500/60;
+  }
+}

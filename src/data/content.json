@@ -1,0 +1,56 @@
+{
+  "profile": {
+    "name": "Sarthak Dixit",
+    "initials": "SD",
+    "tagline": "APIs that ship. Dashboards that answer",
+    "bio": "Developer and data analyst building RESTful APIs and analytics pipelines, with the cloud infrastructure chops to ship them end-to-end — from first commit to production.",
+    "available": true,
+    "email": "sarthak_dixit@outlook.com",
+    "skills": [],
+    "links": {
+      "github": "https://github.com/sarthakdixit",
+      "linkedin": "https://www.linkedin.com/in/sarthak-dixit-92023218b/",
+      "resume": "https://1drv.ms/b/c/ec75ff7ff186b1e4/IQBKECFOnlOyRKtNENUssTIdASQf9u236TmMkyB5wxEZaOo?e=mbnLVQ",
+      "twitter": "https://x.com/yourusername"
+    }
+  },
+  "experience": [
+    {
+      "role": "Consultant",
+      "company": "Deloitte",
+      "period": "2025 — present",
+      "description": "Part of the team migrating a legacy COBOL system to .NET. Used GenAI tooling to accelerate code translation, modernize patterns, and reduce manual rewrite effort.",
+      "current": true
+    },
+    {
+      "role": "Software engineer",
+      "company": "Cognizant",
+      "period": "2021 — 2025",
+      "description": "Built React + TypeScript front-ends and .NET Core / MuleSoft APIs, plus Python automation workflows that cut manual ops toil by 50%. Part of the team which migrated from Splunk to Dynatrace with custom dashboards and alerting."
+    }
+  ],
+  "projects": [
+    {
+      "title": "system-design-teacher",
+      "description": "A web platform for practicing system-design interviews. Drag components onto a canvas, submit your architecture, and get structured AI feedback in seconds.",
+      "tags": ["react", "fastapi", "mongodb", "azure"],
+      "repo": "https://github.com/sarthakdixit/system-design-teacher",
+      "demo": "https://zealous-cliff-07bce210f.7.azurestaticapps.net",
+      "featured": true
+    }
+  ],
+  "labels": {
+    "navHome": "~/root",
+    "navAbout": "about",
+    "navExperience": "experience",
+    "navProjects": "projects",
+    "availableBadge": "// available for new opportunities",
+    "experienceTitle": "experience",
+    "projectsTitle": "projects",
+    "projectsSearchPlaceholder": "Search by tech...",
+    "projectsEmptyState": "no projects match that tech",
+    "footerTagline": "built with react · check console 👀",
+    "consoleGreeting": "👋 hey, curious dev!",
+    "consoleSubtext": "nice to meet someone who checks the console. drop me a line:"
+  }
+}
