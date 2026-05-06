@@ -1,20 +1,9 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-
-type Theme = 'light' | 'dark';
-
-type ThemeContextValue = {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
-};
-
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
-
-const STORAGE_KEY = 'theme';
+import { useEffect, useState, type ReactNode } from 'react';
+import { ThemeContext, THEME_STORAGE_KEY, type Theme } from './ThemeContext';
 
 function writeStored(theme: Theme): void {
   try {
-    localStorage.setItem(STORAGE_KEY, theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
   } catch {
     /* private mode; ignore */
   }
@@ -26,9 +15,7 @@ function applyTheme(theme: Theme): void {
 }
 
 function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'light';
-  // The inline script in index.html already applied the right class.
-  // Read from the DOM so React state matches reality.
+  if (typeof window === 'undefined') return 'dark';
   return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 }
 
@@ -45,10 +32,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  // Sync across tabs
   useEffect(() => {
     const onStorage = (e: StorageEvent): void => {
-      if (e.key === STORAGE_KEY && (e.newValue === 'light' || e.newValue === 'dark')) {
+      if (e.key === THEME_STORAGE_KEY && (e.newValue === 'light' || e.newValue === 'dark')) {
         setThemeState(e.newValue);
         applyTheme(e.newValue);
       }
@@ -62,10 +48,4 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       {children}
     </ThemeContext.Provider>
   );
-}
-
-export function useTheme(): ThemeContextValue {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error('useTheme must be used within a ThemeProvider');
-  return ctx;
 }

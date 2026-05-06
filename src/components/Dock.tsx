@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react';
-import {
-  User,
-  Briefcase,
-  FolderGit2,
-  Mail,
-  Sun,
-  Moon,
-  Command,
-  Github,
-} from 'lucide-react';
-import { useTheme } from '@/theme/ThemeProvider';
+import { User, Briefcase, FolderGit2, Mail, Sun, Moon, Command, Github } from 'lucide-react';
+import { useTheme } from '@/theme/useTheme';
 import { profile } from '@/data';
 
 type DockProps = {
@@ -62,10 +53,35 @@ export function Dock({ onOpenPalette }: DockProps) {
   };
 
   const navItems: DockItem[] = [
-    { id: 'about', label: 'about', icon: User, onClick: scrollTo('about'), gradient: 'from-blue-400 to-blue-600' },
-    { id: 'experience', label: 'experience', icon: Briefcase, onClick: scrollTo('experience'), gradient: 'from-amber-400 to-amber-600' },
-    { id: 'projects', label: 'projects', icon: FolderGit2, onClick: scrollTo('projects'), gradient: 'from-emerald-400 to-emerald-600' },
-    { id: 'contact', label: 'email', icon: Mail, onClick: openLink(`mailto:${profile.email}`), gradient: 'from-pink-400 to-pink-600', mobileHidden: true },
+    {
+      id: 'about',
+      label: 'about',
+      icon: User,
+      onClick: scrollTo('about'),
+      gradient: 'from-blue-400 to-blue-600',
+    },
+    {
+      id: 'experience',
+      label: 'experience',
+      icon: Briefcase,
+      onClick: scrollTo('experience'),
+      gradient: 'from-amber-400 to-amber-600',
+    },
+    {
+      id: 'projects',
+      label: 'projects',
+      icon: FolderGit2,
+      onClick: scrollTo('projects'),
+      gradient: 'from-emerald-400 to-emerald-600',
+    },
+    {
+      id: 'contact',
+      label: 'email',
+      icon: Mail,
+      onClick: openLink(`mailto:${profile.email}`),
+      gradient: 'from-pink-400 to-pink-600',
+      mobileHidden: true,
+    },
   ];
 
   const utilItems: DockItem[] = [
@@ -90,7 +106,8 @@ export function Dock({ onOpenPalette }: DockProps) {
       label: theme === 'dark' ? 'light mode' : 'dark mode',
       icon: theme === 'dark' ? Sun : Moon,
       onClick: toggleTheme,
-      gradient: theme === 'dark' ? 'from-yellow-300 to-orange-500' : 'from-indigo-500 to-purple-700',
+      gradient:
+        theme === 'dark' ? 'from-yellow-300 to-orange-500' : 'from-indigo-500 to-purple-700',
     },
   ];
 

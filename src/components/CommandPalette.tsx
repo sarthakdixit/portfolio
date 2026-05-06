@@ -13,7 +13,7 @@ import {
   FileText,
   Search,
 } from 'lucide-react';
-import { useTheme } from '@/theme/ThemeProvider';
+import { useTheme } from '@/theme/useTheme';
 import { profile } from '@/data';
 
 type CommandPaletteProps = {
