@@ -1,4 +1,4 @@
-import { FileText, Github, Linkedin } from 'lucide-react';
+import { FileText, Github, Linkedin, type LucideIcon } from 'lucide-react';
 import type { ProfileLinks } from '@/data/types';
 
 type SocialLinksProps = {
@@ -8,7 +8,7 @@ type SocialLinksProps = {
 type LinkItem = {
   href: string;
   label: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   external: boolean;
   iconBg: string;
 };

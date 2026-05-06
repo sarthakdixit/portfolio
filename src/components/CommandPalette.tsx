@@ -12,6 +12,7 @@ import {
   Palette,
   FileText,
   Search,
+  type LucideIcon,
 } from 'lucide-react';
 import { useTheme } from '@/theme/useTheme';
 import { profile } from '@/data';
@@ -144,7 +145,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
 }
 
 type PaletteItemProps = {
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: LucideIcon;
   label: string;
   onSelect: () => void;
 };
