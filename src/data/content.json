@@ -31,12 +31,19 @@
   ],
   "projects": [
     {
+      "title": "indian-robbery-rag",
+      "description": "Citation-verified RAG for Indian robbery law (BNS + IPC), deployed end-to-end on Azure free tier with hybrid retrieval, two-layer cahcing and a 59-question eval harness.",
+      "tags": ["react", "fastapi", "azure", "RAG"],
+      "repo": "https://github.com/sarthakdixit/indian-robbery-rag",
+      "demo": "https://mango-coast-00d276f00.7.azurestaticapps.net/",
+      "featured": true
+    },
+    {
       "title": "system-design-teacher",
       "description": "A web platform for practicing system-design interviews. Drag components onto a canvas, submit your architecture, and get structured AI feedback in seconds.",
       "tags": ["react", "fastapi", "mongodb", "azure"],
       "repo": "https://github.com/sarthakdixit/system-design-teacher",
-      "demo": "https://zealous-cliff-07bce210f.7.azurestaticapps.net",
-      "featured": true
+      "demo": "https://zealous-cliff-07bce210f.7.azurestaticapps.net"
     }
   ],
   "labels": {
