@@ -32,7 +32,7 @@
   "projects": [
     {
       "title": "indian-robbery-rag",
-      "description": "Citation-verified RAG for Indian robbery law (BNS + IPC), deployed end-to-end on Azure free tier with hybrid retrieval, two-layer cahcing and a 59-question eval harness.",
+      "description": "Citation-verified RAG for Indian robbery law (BNS + IPC), deployed end-to-end on Azure free tier with hybrid retrieval, two-layer caching and a 59-question eval harness.",
       "tags": ["react", "fastapi", "azure", "RAG"],
       "repo": "https://github.com/sarthakdixit/indian-robbery-rag",
       "demo": "https://mango-coast-00d276f00.7.azurestaticapps.net/",
