@@ -18,7 +18,7 @@
     {
       "role": "Consultant",
       "company": "Deloitte",
-      "period": "2025 — present",
+      "period": "2025 — Present",
       "description": "Part of the team migrating a legacy COBOL system to .NET. Used GenAI tooling to accelerate code translation, modernize patterns, and reduce manual rewrite effort.",
       "current": true
     },
